@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    /* Box-Sizing
+    Box-sizing é uma propriedade que possibilita alterar o comportamento da box-model. UM dos seus valores é o border-box, que faz com que os padding consumam a largura interna dos elementos, não aumentando o seu tamanho.
+    */
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-family: Poppins;
+    background: linear-gradient(to bottom, #3a57f8, #fff);
+    text-align: center;
+    min-height: 100vh;
+}
+
+main.pokedex-container{
+    margin-top: 2%;
+    display: inline-block;
+    padding: 1rem;
+    position: relative;
+}
+
+.pokedex{
+    width: 100%;
+    max-width: 425px;
+}
+
+.pokemon__image{
+    position: absolute;
+    left: 0;
+    /*Propriedade left, bottom, top e right é melhor que sejam definidas em porcentagem para trazer maior responsividade ao site*/
+    left: 45%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    /*Heigth funciona com porcentagem se você colocar isolado do width*/
+    height: 18%;
+}
+
+.pokemon__data{
+    position: absolute;
+    top: 54.5%;
+    right: 27%;
+    /*Função CLamp CSS
+    É uma função do CSS que traz responsividade para o site. Determina um valor padrão que varia entre um limite mínimo e máximo. Quer dizer, não pode ser menor do que o mínimo ou maior do que o máximo.
+    
+    É comum utilizar no default o valor em vw
+
+    */
+    font-size: clamp(8px, 5vw, 25px);
+    color: #aaa;
+    font-weight: 600;
+}
+
+.pokemon__name{
+    color: #3a444d;
+    text-transform: capitalize;
+}
+
+.form-pokemon{
+    position: absolute;
+    width: 65%;
+    top: 65%;
+    left: 13.5%;
+}
+
+.input__search{
+    width: 100%;
+    padding: 3%;
+    outline: none;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #3a444d;
+    font-size: clamp(8px, 5vw, 1rem);
+    /*Criando sombras em CSS
+    Box-shadow é a propriedade que se usa para criar sombras nos botões ou caixas. Isso é definido a partir dos valores:
+    box-shadow: posicao_eixo_x posicao_eixo_y blur cor
+
+    Separando por vírgulas esse conjunto de valores, é possível criar mais de uma sombra
+    */
+    box-shadow: -3px 4px 0 #888, -5px 7px 0 #333;
+}
+
+.buttons{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    width: 65%;
+    transform: translateX(-57%);
+    display: flex;
+    column-gap: 20px;
+}
+
+.buttons .button{
+    width: 50%;
+    padding: 4%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: clamp(5px, 5vw, 1rem);
+    font-weight: 600;
+    background-color: #444;
+    box-shadow: 
+    -2px 3px 0 #222,
+    -4px 6px 0 #000
+    ;
+    color: white;
+}
+
+.buttons .button:active{
+    /*Criando sombras internas
+    Para se criar sombras internas utiliza-se o valor inset do box-shadow
+    */
+    box-shadow: inset -4px 4px 0 #222;
+    font-size: 0.9rem;
+}
